@@ -2209,6 +2209,17 @@ input, select, textarea {
 			.image.main img {
 				width: 100%;
 			}
+			
+			.image.main div.row::after {
+				content: "";
+				clear: both;
+				display: table;
+			}
+			
+			.image.main div.column {
+				float: left;
+				width: 25%;
+			}
 
 			@media screen and (max-width: 736px) {
 
@@ -3954,3 +3965,4 @@ input, select, textarea {
 			opacity: 1;
 			visibility: visible;
 		}
+		
