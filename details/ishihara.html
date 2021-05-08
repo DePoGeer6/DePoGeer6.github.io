@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Islands.io</title>
+		<title>Dot Packing</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
@@ -36,27 +36,27 @@
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h1>Islands.io</h1>
+										<h1>Dot Packing</h1>
 									</header>
 									<span class="image main">
 										<div class="row">
 										<div class="column" style="width:33%">
-										<img src="../images/islands3.png" alt="" />
+										<img src="../images/panda.png" alt="" style="border-radius:50%" />
 										</div>
 										<div class="column" style="width:33%">
-										<img src="../images/islands1.png" alt="" />
+										<img src="../images/ish.png" alt="" style="border-radius:50%" />
 										</div>
 										<div class="column" style="width:33%">
-										<img src="../images/islands2.png" alt="" />
+										<img src="../images/hi.png" alt="" style="border-radius:50%" />
 										</div>
 										</div>
 									</span>
 									<h3>Description:</h3>
-									<p>A unique cross between a base defense, resource collection game, and a classic, fast gameplay .io game.  Play this fun game for 2-4 players with your friends in private rooms that let you enjoy all the benefits of multiplayer gaming for free in a completely online, download free environment. Islands.io has been in development for the last 6 months, and has just now entered the beta testing phase.  It may be down for development, but if you would like to play the game with friends now, just go to <a href="https://objective-agnesi-243dd3.netlify.app/" target=”_blank” class="link">Islandsio.com</a>.  (Instructions page coming soonish)</p>
+									<p>Growing up colorblind, I loathed the Ishihara Dot Tests.  What started as an experiment in programmatic dot packing algorithms turned into a crossover with image processing and random color generation.  Upload any black and white photo, and you can turn it into an Ishihara test, or upload a full color photo and turn it into an array of colorful dots that try to regulate themselves in size to create a detailed picture.  By toggling a handful of parameters such as maximum dot count, minimum and maximum dot size, and limiting dot growth rate, you can really control the level of detail in your results.</p>
 									<h3>Technical Bits:</h3>
-									<p>This game was coded with HTML5, CSS, and JavaScript.  The server-side code is written using the socket.io library version 2.3.0, along with express, node.js, and the yarn package manager.  There is not a single image file in the entire game, instead every single word, graphic, player, tile, and bullet is being drawn using vanilla JavaScript drawing operations in a full-screen canvas.  Although custom sprites or drawing libraries like p5.js might have been easier, I decided to challenge myself in order to get a better understanding of how to navigate the JavaScript canvas.</p>
+									<p>This program was built in the Processing IDE using Java.  First an image is uploaded, and then some simple image processing code is run that creates an arraylist of potential circle locations based on the rgb values of the image.  Every frame, a new set of circles is added in open positions, and the existing circles grow by a few pixels until there are no available spots left for a new circle to spawn with the minimum defined radius.  In the image rendering mode, the circles inherit the color of the pixel in the same location on the uploaded photo, hence the colorized image.</p>
 									<h3>Challenges:</h3>
-									<p>This being my first time creating a multiplayer application, I didn’t exactly design my first iteration with efficiency in mind—which became abundantly clear when the game ran at 3 fps.  To get to the smooth 30 fps we’re at today, I had to do some major refactoring, primarily uprooting the way in which data was sent back and forth so that now, only changes to player and bullet position along with tile updates are sent to the server and back out to the clients.  This included adding optimizations like render distance, more efficient array sorting methods, and moving all actual game logic to the server, leaving the client to simply get the data and render it on screen.</p>
+									<p>Java Processing is one of my most comfortable visual coding environments, so programming wise, there were very few issues that came up.  Logically, I struggled with figuring out how to constrain the generated circles into a certain shape (i.e the circular ishihara tests) in a modular way without having to upload already circular images.  At first my solution was to generate a full rectangular image worth of circles then simply crop it, but it left a lot of half cut off circles around the border.</p>
 								</div>
 							</section>
 
