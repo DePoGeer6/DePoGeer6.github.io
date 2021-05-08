@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Minesweeper AI</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="../index.html" class="logo"><strong>PORTFOLIO</strong> <span>by Trevor DePodesta</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="../index.html">Home</a></li>
+							<li><a href="../programming.html">Programming</a></li>
+							<li><a href="../design.html">Design</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Minesweeper AI</h1>
+									</header>
+									<span class="image main">
+										<div class="row">
+										<div class="column" style="width:40%">
+										<img src="../images/minesweeper.png" alt="" />
+										</div>
+										<div class="column" style="width:60%">
+										<img src="../images/minesweeperstart.png" alt="" />
+										</div>
+										</div>
+									</span>
+									<h3>Description:</h3>
+									<p>If you are like me, you’ve spent too many hours playing the Google Chrome minigames trying to beat a high score.  So I made Stephen, the Google Minesweeper AI to play for me.  The program takes control of your mouse and keyboard and self navigates to the game and plays by itself.  Do you have any Minesweeper time trial records?  Stephen does—36 seconds on the medium level.  The code was written to work on Raspbian with the Raspberry Pi.</p>
+									<h3>Technical Bits:</h3>
+									<p>This program was coded in Python using the PyAutoGUI pip library.  Once the game begins the program moves the cursor out of the way, takes a screenshot of the board, and using some rudimentary library-free image processing interprets the colors and numbers and spits out an array that represents the current game state.  From this array, a series of logic rules are applied, and the program plans out all of the possible moves it can make, mapping them to a series of coordinates on the screen.  This list of coordinates then gets executed, the cursor automatically does it’s thing, and milliseconds later it’s back off to the side taking the next screenshot.</p>
+									<h3>Challenges:</h3>
+									<p>This was one of my first real programs in Python, and my first time ever trusting my code with control over my mouse and keyboard (spoiler alert, I regretted it fast).  Mistake #1: I didn’t code a fail safe, and when my sketchy code found its way clicking into my system preferences I learned my lesson.  Another problem came up when the design of the game changed ever so slightly halfway through the development process where the rgb values of the numbers on the board all shifted a bit, which caused the image processing code to no longer return accurate readings of the current game state.</p>
+								</div>
+							</section>
+
+					</div>
+
+				<!-- Contact -->
+					<section id="contact">
+						<div class="inner">
+							<section>
+								<form method="post" action="https://formspree.io/f/xrgrbkwn">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="6"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Clear" /></li>
+									</ul>
+								</form>
+							</section>
+							<section class="split">
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-envelope"></span>
+										<h3>Email</h3>
+										<a href="#">tgddevelopment@gmail.com</a>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-phone"></span>
+										<h3>Phone</h3>
+										<span>(858) 230-0218</span>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-home"></span>
+										<h3>Address</h3>
+										<span>1234 Somewhere Road<br />
+										La Jolla, CA 92037<br />
+										United States of America</span>
+									</div>
+								</section>
+							</section>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
